@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const User = require('../data/User')
+const mongoose = require('mongoose');
+const User = require('../data/User');
 
 mongoose.Promise = global.Promise
 
@@ -12,17 +12,17 @@ module.exports = (settings) => {
 
     mongoose.set('useCreateIndex', true);
 
-    let db = mongoose.connection
+    let db = mongoose.connection;
 
     db.once('open', err => {
         if (err) {
-            throw err
+            throw err;
         }
 
-        console.log('MongoDB Ready')
+        console.log('MongoDB Ready');
 
-        User.seedAdminUser()
+        User.seedAdminUser();
     })
 
-    db.on('error', err => console.log(`Database error ${err}`))
+    db.on('error', err => console.log(`Database error ${err}`));
 }
