@@ -5,19 +5,24 @@ mongoose.Promise = global.Promise
 
 
 module.exports = (settings) => {
-  mongoose.connect(settings.db)
+    mongoose.connect(settings.db, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
-  let db = mongoose.connection
+    mongoose.set('useCreateIndex', true);
 
-  db.once('open', err => {
-    if (err) {
-      throw err
-    }
+    let db = mongoose.connection
 
-    console.log('MongoDB Ready')
+    db.once('open', err => {
+        if (err) {
+            throw err
+        }
 
-    User.seedAdminUser()
-  })
+        console.log('MongoDB Ready')
 
-  db.on('error', err => console.log(`Database error ${err}`))
+        User.seedAdminUser()
+    })
+
+    db.on('error', err => console.log(`Database error ${err}`))
 }
