@@ -3,11 +3,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
-const handlebars = require('express-handlebars');
+const expressHandlebars = require('express-handlebars');
+const handlebars = require('handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 module.exports = (app) => {
-    app.engine('handlebars', handlebars({
-        defaultLayout: 'main'
+    app.engine('handlebars', expressHandlebars({
+        defaultLayout: 'main',
+        handlebars: allowInsecurePrototypeAccess(handlebars)
     }));
     app.set('view engine', 'handlebars');
     app.use(cookieParser());
