@@ -1,28 +1,22 @@
-const mongoose = require('mongoose');
-const User = require('../data/User');
+const mongoose = require("mongoose");
+const User = require("../data/User");
 
-mongoose.Promise = global.Promise
-
+mongoose.Promise = global.Promise;
 
 module.exports = (settings) => {
-    mongoose.connect(settings.db, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+  mongoose.connect(settings.db);
 
-    mongoose.set('useCreateIndex', true);
+  const db = mongoose.connection;
 
-    let db = mongoose.connection;
+  db.once("open", (err) => {
+    if (err) {
+      throw err;
+    }
 
-    db.once('open', err => {
-        if (err) {
-            throw err;
-        }
+    console.log("MongoDB Ready");
 
-        console.log('MongoDB Ready');
+    User.seedAdminUser();
+  });
 
-        User.seedAdminUser();
-    })
-
-    db.on('error', err => console.log(`Database error ${err}`));
-}
+  db.on("error", (err) => console.log(`Database error ${err}`));
+};
