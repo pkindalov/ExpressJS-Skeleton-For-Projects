@@ -9,9 +9,7 @@ module.exports = (settings) => {
   const db = mongoose.connection;
 
   db.once("open", (err) => {
-    if (err) {
-      throw err;
-    }
+    if (err) throw err;
 
     console.log("MongoDB Ready");
 

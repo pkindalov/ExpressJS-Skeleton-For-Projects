@@ -8,13 +8,13 @@ module.exports = {
   },
 
   registerPost: (req, res) => {
-    let reqUser = req.body;
+    const reqUser = req.body;
 
     // add validations
     // (if reqUser.username.length < 3)...
 
-    let salt = encryption.generateSalt();
-    let hashedPassword = encryption.generateHashedPassword(
+    const salt = encryption.generateSalt();
+    const hashedPassword = encryption.generateHashedPassword(
       salt,
       reqUser.password
     );
@@ -40,7 +40,7 @@ module.exports = {
   },
 
   loginPost: (req, res) => {
-    let reqUser = req.body;
+    const reqUser = req.body;
     User.findOne({
       username: reqUser.username,
     }).then((user) => {

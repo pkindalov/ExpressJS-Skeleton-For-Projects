@@ -4,7 +4,7 @@
     "description": "Skeleton of project from live demo on lesson architecture and authentication",
     "main": "index.js",
     "engines": {
-        "node": "6.10.3"
+        "node": ">=14.0.0"
     },
     "keywords": [
         "skeleton",
