@@ -5,6 +5,10 @@ const session = require("express-session");
 const passport = require("passport");
 const handlebars = require("handlebars");
 const { engine } = require("express-handlebars");
+const { randomBytes } = require("crypto");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 module.exports = (app) => {
   app.engine("handlebars", engine({ defaultLayout: "main", handlebars }));
@@ -15,9 +19,14 @@ module.exports = (app) => {
       extended: true,
     })
   );
+
+  const secretWord = process.env.SECRET
+    ? process.env.SECRET
+    : randomBytes(32).toString("hex");
+
   app.use(
     session({
-      secret: "neshto-taino!@#$%",
+      secret: secretWord,
       resave: false,
       saveUninitialized: false,
     })

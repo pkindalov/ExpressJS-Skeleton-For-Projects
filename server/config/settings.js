@@ -1,17 +1,14 @@
-const path = require('path');
+const dotenv = require("dotenv");
 
-const rootPath = path.normalize(path.join(__dirname, '/../../'));
+dotenv.config();
 
 module.exports = {
-    development: {
-        rootPath: rootPath,
-        db: 'mongodb://localhost:27017/yourDatabase',
-        port: 1337
-    },
-    staging: {
-
-    },
-    production: {
-        port: process.env.PORT
-    }
-}
+  development: {
+    db: process.env.DB_URL_DEVELOPMENT,
+    port: process.env.PORT,
+  },
+  production: {
+    db: process.env.DB_URL_DEVELOPMENT,
+    port: process.env.PORT,
+  },
+};
