@@ -85,6 +85,25 @@ body {
   padding-bottom: 7rem;
 }
 
+.profile-page .profile-info {
+  padding: var(--space-m);
+  border-radius: var(--space-s);
+  background-color: #f8f9fa;
+}
+.profile-page .actions a {
+  margin-top: var(--space-s);
+}
+
+.user-dashboard .list-group-item {
+  margin-bottom: var(--space-s);
+  border-radius: var(--space-xs);
+}
+.user-dashboard .dashboard-content {
+  padding: var(--space-m);
+  background-color: #f8f9fa;
+  border-radius: var(--space-s);
+}
+
 @media (max-width: 576px) {
   .navbar-brand {
     margin-right: 0.5rem;

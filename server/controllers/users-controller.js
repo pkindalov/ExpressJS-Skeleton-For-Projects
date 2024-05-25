@@ -72,6 +72,11 @@ module.exports = {
     res.render("users/profile", { username });
   },
 
+  dashboard: (req, res) => {
+    const username = req.params.username ?? "Guest";
+    res.render("users/dashboard", { username });
+  },
+
   logout: (req, res) => {
     req.logout((err) => {
       if (err) console.log(err);

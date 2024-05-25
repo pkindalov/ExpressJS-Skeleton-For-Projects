@@ -1,0 +1,35 @@
+{{!< main }}
+<div class="user-dashboard">
+  <div class="container">
+    <h1 class="mb-4">Dashboard</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="list-group">
+          <a
+            href="/users/{{username}}/profile"
+            class="list-group-item list-group-item-action"
+          >Profile</a>
+          <a
+            href="/users/{{username}}/posts"
+            class="list-group-item list-group-item-action"
+          >My Posts</a>
+          <a
+            href="/users/{{username}}/settings"
+            class="list-group-item list-group-item-action"
+          >Settings</a>
+          <a
+            href="/users/{{username}}/analytics"
+            class="list-group-item list-group-item-action"
+          >Analytics</a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="dashboard-content">
+          <h2>Welcome, {{username}}</h2>
+          <p>Here you can manage all aspects of your online presence on our
+            site. Select an option from the menu to proceed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,16 @@ module.exports = (app) => {
   app.post("/users/register", controllers.users.registerPost);
   app.get("/users/login", controllers.users.loginGet);
   app.post("/users/login", controllers.users.loginPost);
-  app.get("/users/profile/:username", auth.isAuthenticated, controllers.users.userProfile);
+  app.get(
+    "/users/profile/:username",
+    auth.isAuthenticated,
+    controllers.users.userProfile
+  );
+  app.get(
+    "/users/:username/dashboard",
+    auth.isAuthenticated,
+    controllers.users.dashboard
+  );
   app.post("/users/logout", controllers.users.logout);
 
   app.all("*", (req, res) => {

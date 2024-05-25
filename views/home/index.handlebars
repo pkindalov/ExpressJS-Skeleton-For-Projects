@@ -4,8 +4,12 @@
       <h1 class="display-4 mt-5">Welcome back, {{currentUser.username}}!</h1>
       <p class="lead mb-4">Explore new features, manage your posts, or continue
         engaging with your audience.</p>
-      <a class="btn btn-primary btn-lg" href="/dashboard" role="button">Go to
-        Dashboard</a>
+      <a
+        class="btn btn-primary btn-lg"
+        href="/users/{{currentUser.username}}/dashboard"
+        `
+        role="button"
+      >Go to Dashboard</a>
     {{else}}
       <h1 class="display-4 mt-5">Welcome to My Cool Blog System!</h1>
       <p class="lead mb-4">Join our community of creators and start sharing your
