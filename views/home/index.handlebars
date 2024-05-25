@@ -1,1 +1,53 @@
-<h1>Hi!</h1>
+<section class="jumbotron mt-4">
+  <div class="wellcome-section">
+    {{#if currentUser}}
+      <h1 class="display-4 mt-5">Welcome back, {{currentUser.username}}!</h1>
+      <p class="lead mb-4">Explore new features, manage your posts, or continue
+        engaging with your audience.</p>
+      <a class="btn btn-primary btn-lg" href="/dashboard" role="button">Go to
+        Dashboard</a>
+    {{else}}
+      <h1 class="display-4 mt-5">Welcome to My Cool Blog System!</h1>
+      <p class="lead mb-4">Join our community of creators and start sharing your
+        story today.</p>
+      <a
+        class="btn btn-primary btn-lg"
+        href="/users/register"
+        role="button"
+      >Register Now</a>
+      <a
+        class="btn btn-secondary btn-lg"
+        href="/users/login"
+        role="button"
+      >Login</a>
+    {{/if}}
+  </div>
+  <hr class="my-4 mt-5 mb-5" />
+  <div class="learn-more-section">
+    <p>Check out our latest blogs or learn more about what we offer.</p>
+    <a class="btn btn-success btn-lg mb-5" href="/about" role="button">Learn
+      More</a>
+  </div>
+</section>
+
+<section class="features mt-3 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Fast & Secure</h3>
+        <p>Our platform ensures a fast and secure blogging experience with
+          state-of-the-art security measures.</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-center">Easy Content Management</h3>
+        <p>Whether you are a beginner or a seasoned blogger, our tools make
+          content management a breeze.</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-center">Monetize Your Passion</h3>
+        <p>Learn how to monetize your blog with our integrated advertising and
+          sponsorship opportunities.</p>
+      </div>
+    </div>
+  </div>
+</section>

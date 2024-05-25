@@ -1,34 +1,34 @@
 {
-    "name": "architecture-skeleton",
-    "version": "0.0.1",
-    "description": "Skeleton of project from live demo on lesson architecture and authentication",
-    "main": "index.js",
-    "engines": {
-        "node": ">=14.0.0"
-    },
-    "keywords": [
-        "skeleton",
-        "project",
-        "live",
-        "demo",
-        "lesson",
-        "architecture",
-        "authentication",
-        "nodejs",
-        "javascript"
-    ],
-    "author": "r3v3nan7",
-    "license": "MIT",
-    "dependencies": {
-        "body-parser": "^1.20.2",
-        "cookie-parser": "^1.4.6",
-        "dotenv": "^16.4.5",
-        "express": "^4.19.2",
-        "express-handlebars": "^7.1.2",
-        "express-session": "^1.18.0",
-        "handlebars": "^4.7.7",
-        "mongoose": "^8.4.0",
-        "passport": "^0.7.0",
-        "passport-local": "^1.0.0"
-    }
+  "name": "architecture-skeleton",
+  "version": "0.0.1",
+  "description": "Skeleton of project from live demo on lesson architecture and authentication",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "skeleton",
+    "project",
+    "live",
+    "demo",
+    "lesson",
+    "architecture",
+    "authentication",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "r3v3nan7",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "handlebars": "^4.7.7",
+    "mongoose": "^8.4.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
 }
