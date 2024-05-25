@@ -1,32 +1,31 @@
-
-
-
-<div class="container">
-    <h2>All Threads of {{user.username}}</h2>
-</div>
-
-{{#each thread}}
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <h2>Title:</h2>
-                {{title}}
-            <h2>Description</h2>
-                {{description}}
-                <hr />
-            <h2>Author Comments:</h2>
-            {{#each answers}}
-                {{answer}}
-            {{/each}}    
-
-        </div>
+{{!< main }}
+<section class="profile-page mt-5 mb-5">
+  <h1 class="display-4 text-center">User Profile: {{username}}</h1>
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div
+        class="profile-info shadow-sm p-3"
+        style="margin-top: var(--space-xxl); background-color: #fff; border-radius: var(--space-s);"
+      >
+        <h3>Profile Information</h3>
+        <p><strong>Email:</strong> user@example.com</p>
+        <p><strong>Member since:</strong> January 2021</p>
+        <!-- Допълнителна информация може да бъде добавена тук -->
+      </div>
+      <div class="actions mt-3">
+        <a
+          href="/users/edit/{{username}}"
+          class="btn btn-primary"
+          style="margin-top: var(--space-m);"
+        >Edit Profile</a>
+      </div>
     </div>
-{{/each}}
+  </div>
 
-{{#if hasPrev}}
-    <a class="btn btn-primary" href="/users/profile/:username?page={{prevPage}}">PREV</a>
-{{/if}}
+</section>
 
-{{#if hasNext}}
-    <a class="btn btn-primary" href="/users/profile/:username?page={{nextPage}}">NEXT</a>
-{{/if}}
-
+<style>
+  .profile-page .profile-info { padding: var(--space-m); border-radius:
+  var(--space-s); background-color: #f8f9fa; } .profile-page .actions a {
+  margin-top: var(--space-s); }
+</style>
