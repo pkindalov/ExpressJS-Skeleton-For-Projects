@@ -21,10 +21,14 @@ To get started with this skeleton project, you should follow these steps:
    git clone https://github.com/yourgithub/expressjs-skeleton.git
    cd expressjs-skeleton
 
-2. Install dependencies
+2.  Install dependencies
     ```bash
     npm install
-    
-3. Start the server:
+ 
+3. Configure environment variables:
+   - Fill in the .env file with your specific configurations (e.g., database URL, server port, etc.).
+   
+
+4. Start the server:
     ```bash
     node index.js
