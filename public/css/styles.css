@@ -29,11 +29,21 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   box-sizing: border-box;
   min-height: 100vh;
+}
+
+html, body {
+  height: 100%; /* Уверете се, че html и body заемат цялата височина на прозореца */
+}
+
+main{
+  flex-grow: 1;
 }
 
 .container {
@@ -102,6 +112,10 @@ body {
   padding: var(--space-m);
   background-color: #f8f9fa;
   border-radius: var(--space-s);
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 @media (max-width: 576px) {

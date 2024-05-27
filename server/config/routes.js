@@ -15,7 +15,7 @@ module.exports = (app) => {
     controllers.users.userProfile
   );
   app.get(
-    "/users/:username/dashboard",
+    "/users/dashboard/:username",
     auth.isAuthenticated,
     controllers.users.dashboard
   );
